@@ -32,6 +32,13 @@ FROM students
 JOIN majors ON students.major_id = majors.major_id;
 ```
 
+## 📊 Sample Output
+
+| Student Name | Major        |
+|-------------|-------------|
+| John Doe    | Computer Sci |
+| Jane Smith  | Biology      |
+
 ### Get courses per major
 ```sql
 SELECT major, course
@@ -51,6 +58,14 @@ psql -U postgres -f student.sql
 ```bash
 bash insert_data.sh
 ```
+## 📈 Analysis Queries
+
+### Top majors by number of students
+SELECT major, COUNT(*) 
+FROM students
+JOIN majors USING(major_id)
+GROUP BY major
+ORDER BY COUNT DESC;
 
 ## 📚 What I Learned
 - Relational database design
@@ -62,3 +77,4 @@ bash insert_data.sh
 - Add more complex queries (analytics)
 - Create reports (top students, etc.)
 - Connect to a frontend app
+
