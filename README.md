@@ -56,7 +56,7 @@ psql -U postgres -f student.sql
 
 2. Run script:
 ```bash
-bash insert_data.sh
+bash student_info.sh
 ```
 ## 📈 Data Analysis
 
