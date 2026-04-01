@@ -58,14 +58,42 @@ psql -U postgres -f student.sql
 ```bash
 bash insert_data.sh
 ```
-## 📈 Analysis Queries
+## 📈 Data Analysis
 
-### Top majors by number of students
+### Number of students per major
 SELECT major, COUNT(*) 
 FROM students
 JOIN majors USING(major_id)
-GROUP BY major
+GROUP BY major;
+
+### Most popular courses
+SELECT course, COUNT(*) 
+FROM majors_courses
+JOIN courses USING(course_id)
+GROUP BY course
 ORDER BY COUNT DESC;
+
+## 📊 Sample Output
+
+| Major        | Number of Students |
+|--------------|-------------------|
+| Computer Sci | 5                 |
+| Biology      | 3                 |
+
+## 🎯 Purpose
+This project demonstrates how relational databases are used to organize and analyze structured data, similar to real-world student management systems.
+
+## 📁 Project Structure
+
+### Part 1
+- Database creation
+- Table setup
+- Initial data insertion
+
+### Part 2
+- Advanced queries
+- Data retrieval using JOIN
+- Improved database logic
 
 ## 📚 What I Learned
 - Relational database design
